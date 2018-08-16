@@ -16,6 +16,12 @@ class MainApp extends Component {
   }
 
   render() {
+    const panelA = <LoadableA/>;
+    const panelB = <LoadableB/>;
+
+    if (panelA.type === panelB.type)
+      console.error("panelA.type and panelB.type are pointing to the same object!");
+
     return (
       <div className="my-main-app">
         <h3>{this.props.greeting}!</h3>
@@ -42,7 +48,7 @@ class MainApp extends Component {
           <label htmlFor="sel_b">Panel B</label>
         </div>
         <div>
-          {this.state.currentPanel === "A" ? <LoadableA/> : <LoadableB/>}
+          {this.state.currentPanel === "A" ? panelA : panelB}
         </div>
       </div>
     );
