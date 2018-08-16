@@ -1,4 +1,3 @@
-import "./MainApp.css";
 import React, {Component} from "react";
 import {hot, setConfig} from "react-hot-loader";
 import LoadableA from "./LoadableA";
@@ -23,7 +22,7 @@ class MainApp extends Component {
       console.error("panelA.type and panelB.type are pointing to the same object!");
 
     return (
-      <div className="my-main-app">
+      <div style={{margin: "4em", padding: "1em", border: "1px solid #bbb"}}>
         <h3>{this.props.greeting}!</h3>
         <div>
           <input

@@ -17,7 +17,7 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js|\.jsx$/,
-      exclude: /(node_modules|bower_components)/,
+      exclude: /node_modules/,
       use: {
         loader: "babel-loader",
         options: {
@@ -30,12 +30,6 @@ module.exports = {
           ].concat(process.env.WEBPACK_DEV === "hot" ? ["react-hot-loader/babel"] : [])
         }
       }
-    }, {
-      test: /\.css$/,
-      use: [
-        "style-loader",
-        "css-loader"
-      ]
     }]
   }
 };
